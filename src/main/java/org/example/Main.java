@@ -5,7 +5,6 @@ import entidades.*;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.util.HashSet;
 
 public class Main {
     public static void main(String[] args) {
@@ -66,20 +65,15 @@ public class Main {
             factura1.setCliente(cliente);
 
 
-            if (art1.getCategorias() == null) { art1.setCategorias(new HashSet<>()); } // No se xq pero sin esto no compila
             art1.getCategorias().add(perecederos);
             art1.getCategorias().add(lacteos);
 
-            if (lacteos.getArticulos() == null) { lacteos.setArticulos(new HashSet<>()); } // No se xq pero sin esto no compila
             lacteos.getArticulos().add(art1);
 
-            if (perecederos.getArticulos() == null) { perecederos.setArticulos(new HashSet<>()); } // No se xq pero sin esto no compila
             perecederos.getArticulos().add(art1);
 
-            if (art2.getCategorias() == null) { art2.setCategorias(new HashSet<>()); } // No se xq pero sin esto no compila
             art2.getCategorias().add(caramelos);
 
-            if (caramelos.getArticulos() == null) { caramelos.setArticulos(new HashSet<>()); } // No se xq pero sin esto no compila
             caramelos.getArticulos().add(art2);
 
             DetalleFactura det1 = DetalleFactura.builder().build();
@@ -88,10 +82,8 @@ public class Main {
             det1.setCantidad(2);
             det1.setSubtotal(40);
 
-            if (art1.getDetalleFacturas() == null) { art1.setDetalleFacturas(new HashSet<>()); } // No se xq pero sin esto no compila
             art1.getDetalleFacturas().add(det1);
 
-            if (factura1.getDetalles() == null ) {factura1.setDetalles(new HashSet<>());}
             factura1.getDetalles().add(det1);
 
             det1.setFactura(factura1);
@@ -104,7 +96,6 @@ public class Main {
 
 
 
-            if (art2.getDetalleFacturas() == null) { art2.setDetalleFacturas(new HashSet<>()); } // No se xq pero sin esto no compila
             art2.getDetalleFacturas().add(det2);
 
 

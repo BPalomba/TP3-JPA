@@ -36,7 +36,7 @@ public class Cliente implements Serializable
     @JoinColumn(name = "fk_domicilio")
     private Domicilio domicilio;
 
-
+    @Builder.Default
     @OneToMany(mappedBy = "cliente")
     private Set<Factura> facturas = new HashSet<>();
 

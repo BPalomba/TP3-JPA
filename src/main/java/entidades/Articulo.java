@@ -26,11 +26,11 @@ public class Articulo implements Serializable {
     private String denominacion;
     private int cantidad;
 
-
+    @Builder.Default
     @OneToMany(mappedBy = "articulo" , cascade = CascadeType.PERSIST)
     private Set<DetalleFactura> detalleFacturas = new HashSet<>();
 
-
+    @Builder.Default
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
             name = "articulo_categoria",

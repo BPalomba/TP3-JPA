@@ -24,6 +24,7 @@ public class Categoria implements Serializable {
     private Long id;
     private String denominacion;
 
+    @Builder.Default
     @ManyToMany(mappedBy = "categorias")
     private Set<Articulo> articulos = new HashSet<>();
 

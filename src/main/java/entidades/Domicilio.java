@@ -26,6 +26,7 @@ public class Domicilio implements Serializable {
     private String nombreCalle;
     private int numero;
 
+
     @OneToOne(mappedBy = "domicilio")
     private Cliente cliente;
 

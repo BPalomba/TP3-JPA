@@ -31,7 +31,7 @@ public class Factura implements Serializable {
     @JoinColumn(name = "fk_cliente")
     private Cliente cliente;
 
-
+    @Builder.Default
     @OneToMany(mappedBy = "factura"  , cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<DetalleFactura> detalles = new HashSet<>();
 
